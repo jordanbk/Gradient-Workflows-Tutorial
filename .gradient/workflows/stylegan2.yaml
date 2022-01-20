@@ -1,13 +1,14 @@
-Gradient Workflow Tutorial
+# Gradient Workflow Tutorial
 #
-This is the YAML file used to run the Gradient modeling Workflow for the sample project based on StyleGAN2 at
-https://docs.paperspace.com.
+# This is the YAML file used to run the Gradient modeling Workflow for the sample project based on StyleGAN2 at
+# https://docs.paperspace.com.
 #
 #
-Last updated: Dec 07 2021
+# Last updated: Dec 07 2021
 #
-Trigger Workflow to run on any update (commit) to the repository when linked to a Gradient project
-(uncomment to activate)
+# Trigger Workflow to run on any update (commit) to the repository when linked to a Gradient project
+# (uncomment to activate)
+
 
 on:
   github:
