@@ -1,13 +1,22 @@
+# Gradient Workflow Tutorial
+#
+# This is the YAML file used to run the Gradient modeling Workflow for the sample project based on StyleGAN2 at
+# https://docs.paperspace.com.
+#
+#
+# Last updated: Dec 07 2021
+#
+# Trigger Workflow to run on any update (commit) to the repository when linked to a Gradient project
+# (uncomment to activate)
 
-
-on:
+ on:
   github:
     branches:
       only: main
 
 jobs:
 
-   1. Clone StyleGAN repo into managed storage provider dataset
+  # 1. Clone StyleGAN repo into managed storage provider dataset
 
   cloneStyleGAN2Repo:
     resources:
@@ -19,11 +28,11 @@ jobs:
     with:
       url: https://github.com/NVlabs/stylegan2.git
 
-   2. Get pretrained cat model
+  # 2. Get pretrained cat model
 
-   The model .pkl is large so is not in the main StyleGAN2 repo
-   We copy the .pkl in this step, then refer to the copy via getPretrainedModelCats.outputs.pretrainedNetwork
-   below to avoid copying it again in the next steps
+  # The model .pkl is large so is not in the main StyleGAN2 repo
+  # We copy the .pkl in this step, then refer to the copy via getPretrainedModelCats.outputs.pretrainedNetwork
+  # below to avoid copying it again in the next steps
 
   getPretrainedModelCats:
     resources:
@@ -43,7 +52,7 @@ jobs:
       image: alpine:latest
 
 
-   3. Show generating images using pretrained cat model
+  # 3. Show generating images using pretrained cat model
 
   generateCatImagesPretrainedModel:
     resources:
@@ -75,7 +84,8 @@ jobs:
         ls "-aFlR" /outputs
       image: tensorflow/tensorflow:1.14.0-gpu-py3
       
-       4. Get pretrained car model
+      
+  # 4. Get pretrained car model
 
    getPretrainedModelCars:
      resources:
@@ -94,7 +104,7 @@ jobs:
          - /outputs/pretrainedNetwork
        image: alpine:latest
       
-   5. Show generating images using pretrained car model
+  # 5. Show generating images using pretrained car model
 
    generateCarImagesPretrainedModel:
      resources:
