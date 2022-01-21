@@ -87,7 +87,7 @@ jobs:
       
   # 4. Get pretrained car model
 
-   getPretrainedModelCars:
+  getPretrainedModelCars:
      resources:
        instance-type: C4
      outputs:
