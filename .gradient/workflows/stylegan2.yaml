@@ -106,7 +106,7 @@ jobs:
       
   # 5. Show generating images using pretrained car model
 
-   generateCarImagesPretrainedModel:
+  generateCarImagesPretrainedModel:
      resources:
        instance-type: P4000
      needs:
